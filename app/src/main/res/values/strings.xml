@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MultiThreadDemo</string>
+    <string name="change_text_button">我看72变</string>
+    <string name="welome_message">Hello World!</string>
+</resources>
