@@ -66,11 +66,23 @@
         android:id="@+id/bind_service_button"/>
 
     <Button
-        android:text="取消绑定"
+        android:text="Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/bind_service_button"
         android:layout_alignLeft="@+id/stopServiceButton"
         android:layout_alignStart="@+id/stopServiceButton"
         android:id="@+id/unbind_service_button"/>
+
+    <Button
+        android:text="启动IntentService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:id="@+id/start_intent_service"
+        android:layout_below="@+id/change_text_btn"
+        android:layout_toRightOf="@+id/bind_service_button"
+        android:layout_toEndOf="@+id/bind_service_button"/>
+
+
 </RelativeLayout>

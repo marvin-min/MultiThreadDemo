@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.jarorwar.demo.multi.multithreaddemo.services.MyIntentService;
 import com.jarorwar.demo.multi.multithreaddemo.services.MyService;
 
 public class MainActivity extends Activity {
@@ -26,6 +27,8 @@ public class MainActivity extends Activity {
     private Button stopServiceButton;
     private Button bindServiceButton;
     private Button unbindServiceButton;
+    private Button startIntentServiceButton;
+
     private MyService.DownloadBinder mDownloadBinder;
 
     private TextView welcomeText;
@@ -114,6 +117,15 @@ public class MainActivity extends Activity {
             }
         });
 
+
+        startIntentServiceButton = (Button) findViewById(R.id.start_intent_service);
+        startIntentServiceButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MyIntentService.class);
+                startService(intent);
+            }
+        });
 
     }
 
