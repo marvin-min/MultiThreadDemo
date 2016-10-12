@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.jarorwar.demo.multi.multithreaddemo.services.LongTimeRunningService;
 import com.jarorwar.demo.multi.multithreaddemo.services.MyIntentService;
 import com.jarorwar.demo.multi.multithreaddemo.services.MyService;
 
@@ -67,6 +68,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent intent = new Intent(this, LongTimeRunningService.class);
+        startService(intent);
 
         welcomeText = (TextView) findViewById(R.id.welcome_message);
         changeButton = (Button) findViewById(R.id.change_text_btn);

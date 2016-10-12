@@ -18,6 +18,8 @@
 
         <service android:name=".services.MyService"/>
         <service android:name=".services.MyIntentService"/>
+        <service android:name=".services.LongTimeRunningService"/>
+        <receiver android:name=".services.AlarmReceiver"/>
     </application>
 
 </manifest>
