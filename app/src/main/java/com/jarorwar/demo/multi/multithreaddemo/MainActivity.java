@@ -56,6 +56,7 @@ public class MainActivity extends Activity {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
+                welcomeText.setText("");
                 mProgressBar.setVisibility(View.VISIBLE);
             }
 
@@ -69,13 +70,17 @@ public class MainActivity extends Activity {
             @Override
             protected void onProgressUpdate(Integer... values) {
                 super.onProgressUpdate(values);
-                System.out.println("-------");
+                mProgressBar.setProgress(values[0]);
             }
 
             @Override
             protected Boolean doInBackground(Void... params) {
                 try {
-                    Thread.sleep(10000);
+                    for (int i = 0; i <= 100 ; i++) {
+                        Thread.sleep(200);
+                        publishProgress(i);
+
+                    }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
