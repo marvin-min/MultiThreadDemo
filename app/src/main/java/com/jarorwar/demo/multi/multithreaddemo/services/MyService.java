@@ -1,10 +1,16 @@
 package com.jarorwar.demo.multi.multithreaddemo.services;
 
+import android.app.Notification;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
+
+import com.jarorwar.demo.multi.multithreaddemo.MainActivity;
+import com.jarorwar.demo.multi.multithreaddemo.R;
 
 /**
  * Created by marvinmin on 10/12/16.
@@ -24,6 +30,24 @@ public class MyService extends Service {
     public void onCreate() {
         Log.d(MY_SERVICE_TAG, "onCreate: ");
         super.onCreate();
+
+
+        long[] vars = {0, 1000, 0, 10000};
+        Intent intent = new Intent(this, MainActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        Notification notification = new Notification.Builder(this).setContentText("看啦看啦")
+                .setContentTitle("一朵花儿开呀开")
+                .setTicker("大美无疆,干净桌面图片")
+                .setSmallIcon(R.drawable.bee)
+                .setWhen(System.currentTimeMillis())
+                .setContentIntent(pendingIntent)
+                .setVibrate(vars)
+                .setLights(Color.RED, 1000, 1000)
+                .build();
+
+        startForeground(1, notification);
+
     }
 
     @Override
