@@ -30,4 +30,47 @@
         android:layout_height="30dp"
         android:max="100"
         style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"/>
+
+    <Button
+        android:id="@+id/startServiceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/welcome_message"
+        android:layout_toStartOf="@+id/welcome_message"
+        android:layout_marginRight="21dp"
+        android:layout_marginEnd="21dp"
+        android:text="运行"
+        />
+
+    <Button
+        android:text="停止"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/stopServiceButton"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/welcome_message"
+        android:layout_toEndOf="@+id/welcome_message"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="21dp"
+        />
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loading_button"
+        android:layout_alignLeft="@+id/startServiceButton"
+        android:layout_alignStart="@+id/startServiceButton"
+        android:layout_marginTop="50dp"
+        android:id="@+id/bind_service_button"/>
+
+    <Button
+        android:text="取消绑定"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/bind_service_button"
+        android:layout_alignLeft="@+id/stopServiceButton"
+        android:layout_alignStart="@+id/stopServiceButton"
+        android:id="@+id/unbind_service_button"/>
 </RelativeLayout>
